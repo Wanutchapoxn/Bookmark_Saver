@@ -1,0 +1,219 @@
+body { font-family: Arial, sans-serif; margin: 30px; background: linear-gradient(135deg, #8132f7, #7d5f91);
+ }
+header { margin-bottom: 20px; }
+form { margin-bottom: 15px; }
+input, select, button { padding: 6px; margin-right: 5px; }
+table { border-collapse: collapse; width: 100%; margin-top: 15px;}
+th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+th { background: #f4f4f4; }
+a { text-decoration: none; color: blue; }
+
+
+.description {
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #555;  /* สีจาง */
+}
+
+.description strong {
+    font-size: 16px;
+    color: #000;  /* เข้ม */
+}
+
+.description .highlight {
+    font-weight: bold;
+    color: #000;  /* คำเน้น */
+}
+
+.logo-font {
+    font-family: 'Bitcount Grid Double', system-ui, sans-serif; 
+    font-size: 50px;
+        display: inline-block;
+    animation: bounce 1.2s ease infinite alternate;
+}
+
+/* Keyframes bounce */
+@keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-10px); /* เด้งขึ้น */
+    }
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* เอาเส้นขอบมาติดกัน */
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+
+     border: 1px solid #ddd;
+     border-radius: 40px;   /* มุมโค้ง */
+     overflow: hidden;      /* ป้องกันเนื้อหาทะลุขอบมน */
+
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+    
+  
+    th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    }
+
+    th {
+    background-color: #7800db; /* สีหัวตาราง */
+    color: white;
+    }
+
+  td {
+    background-color: #ffffff; /* สีหัวตาราง */
+    color: rgb(0, 0, 0);
+    }
+
+
+    
+
+    tr:hover td {
+    background-color: #c3b2de; /* ชี้เมาส์แล้วเปลี่ยนสี */
+    transform: scale(1.08);   /* ขยายขึ้น 8% */
+    }
+
+    a {
+    color: #007BFF;
+    text-decoration: none;
+    }
+
+    a:hover {
+    text-decoration: underline;
+    }
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;          /* จัดให้อยู่กลาง */
+  padding: 20px;
+
+  border: 3px solid #ffffff;  /* กรอบ */
+  border-radius: 15px;        /* มุมโค้ง */
+  background: #fdfdfd;        /* พื้นหลังขาว */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* เงา */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+nav .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .nav-right {
+    margin-left: auto;
+}
+
+.search-form {
+    display: flex;          /* จัดให้อยู่แถวเดียวกัน */
+    align-items: center;    /* จัดให้อยู่ระดับเดียวกัน */
+    gap: 8px;               /* เว้นระยะห่าง */
+}
+
+.search-form input[type="text"]  {
+    display: flex;
+    gap: 5px;
+    width: 250px;         /* ความกว้าง */
+    padding: 8px 12px;    /* ขยายช่องว่างด้านใน */
+    border-radius: 20px;   /* ทำขอบมน */
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* ปรับปุ่ม Search */
+.search-form button {
+    padding: 8px 16px;
+    border-radius: 8px;   /* ทำขอบมน */
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-form button:hover {
+    background-color: #e0e0e0; /* เวลา hover */
+
+}
+}
+
+/* สไตล์ทั่วไปของ input, select, button */
+input[type="text"],
+input[type="url"],
+input[type="search"],
+select,
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;   /* ทำมุมโค้ง */
+    outline: none;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* เวลาโฟกัส */
+input:focus,
+select:focus {
+    border-color: #007bff;   /* ขอบน้ำเงิน */
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* ปุ่ม */
+button {
+    background-color: #f8f9fa;
+    cursor: pointer;
+    border: 1px solid #bbb;
+}
+
+button:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* คอลัมน์ ID */
+table th:first-child,
+table td:first-child {
+    width: 70px;          /* ปรับความกว้างได้ */
+    text-align: center;   /* จัดข้อความตรงกลาง */
+}
+
+/* คอลัมน์ Action */
+table th:last-child,
+table td:last-child {
+    width: 100px;         /* ปรับความกว้างได้ */
+    text-align: center;   /* จัดข้อความตรงกลาง */
+}
+
+
+
+/* Navbar */
+nav {
+    display: flex;
+    align-items: center;  /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    gap: 10px;
+}
+
+/* Form ด้านใน Navbar */
+nav form {
+    display: flex;
+    align-items: center;  /* บังคับ input + ปุ่มให้อยู่ระดับเดียวกัน */
+    gap: 5px;
+    margin: 0;  /* ยกเลิก margin ที่ทำให้ตก */
+}
+
+
+
