@@ -29,6 +29,12 @@
     </script>
 </head>
 <body>
+        <header>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
+        </header>
+
      <div class="container">
             <header>
                 <h1 class="logo-font"> BOOKMARK SAVER</h1>

@@ -18,18 +18,18 @@
 <!-- ค้นหา -->
 <form method="GET">
 <h3 class="logo-font">Your Bookmarks</h3>
-<table>
+<table style="border-radius: 15px">
     <tr>
-        <th style="width: 60px;">ID</th>
+        <th style="width: 60px;">No.</th>
         <th>Title</th>
         <th>URL</th>
         <th>Category</th>
         <th>Created At</th>
-        <th style="width: 100px;">Action</th>
+        <th style="width: 100px;">Delete?</th>
     </tr>
     {% for id, title, url, category, created_at in bookmarks %}
     <tr>
-        <td>{{ id }}</td>
+        <td>{{ loop.revindex }}</td>
         <td>{{ title }}</td>
         <td><a href="{{ url }}" target="_blank">{{ url }}</a></td>
         <td>{{ category }}</td>

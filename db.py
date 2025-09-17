@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash
 
 DB_NAME = "bookmarks.db"
 
+
 def get_connection():
     return sqlite3.connect(DB_NAME)
 
@@ -23,7 +24,9 @@ def init_db():
                         title TEXT NOT NULL,
                         url TEXT NOT NULL,
                         category TEXT,
-                        created_at TEXT
+                        created_at TEXT,
+                        user_id INTEGER,
+                        FOREIGN KEY (user_id) REFERENCES users(id)
                     )''')
 
         # ตาราง users
@@ -41,30 +44,15 @@ def init_db():
         if not c.fetchone():
             c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (
                 "admin",
-                generate_password_hash("1234")
+                generate_password_hash("1234")  # 🔒 hash password
             ))
 
         conn.commit()
 
 
 # ===== helper functions สำหรับ User =====
-def get_user_by_username(username):
-    with get_connection() as conn:
-        c = conn.cursor()
-        c.execute("SELECT id, username, password FROM users WHERE username=?", (username,))
-        return c.fetchone()
-
-
-def get_user_by_id(user_id):
-    with get_connection() as conn:
-        c = conn.cursor()
-        c.execute("SELECT id, username, password FROM users WHERE id=?", (user_id,))
-        return c.fetchone()
-def get_connection():
-    return sqlite3.connect(DB_NAME)
-
-
 def create_user(username, password):
+    """สร้าง user ใหม่ (hash password ก่อนเก็บ)"""
     with get_connection() as conn:
         c = conn.cursor()
         try:
@@ -80,6 +68,7 @@ def create_user(username, password):
 
 
 def get_user_by_username(username):
+    """ดึงข้อมูล user จาก username"""
     with get_connection() as conn:
         c = conn.cursor()
         c.execute("SELECT id, username, password FROM users WHERE username=?", (username,))
@@ -87,6 +76,7 @@ def get_user_by_username(username):
 
 
 def get_user_by_id(user_id):
+    """ดึงข้อมูล user จาก id"""
     with get_connection() as conn:
         c = conn.cursor()
         c.execute("SELECT id, username, password FROM users WHERE id=?", (user_id,))

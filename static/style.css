@@ -1,5 +1,10 @@
-body { font-family: Arial, sans-serif; margin: 30px; background: linear-gradient(135deg, #8132f7, #7d5f91);
- }
+body 
+    {   font-family: Arial, sans-serif;
+        margin: 30px; 
+        background: linear-gradient(135deg, #8132f7,#734cad, #7d5f91);
+        animation: gradientBG 15s ease infinite;
+        background-size: 400% 400%;
+    }
 header { margin-bottom: 20px; }
 form { margin-bottom: 15px; }
 input, select, button { padding: 6px; margin-right: 5px; }
@@ -51,7 +56,7 @@ table {
     font-family: Arial, sans-serif;
 
      border: 1px solid #ddd;
-     border-radius: 40px;   /* มุมโค้ง */
+     border-radius: 0px;   /* มุมโค้ง */
      overflow: hidden;      /* ป้องกันเนื้อหาทะลุขอบมน */
 
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -189,6 +194,7 @@ table th:first-child,
 table td:first-child {
     width: 70px;          /* ปรับความกว้างได้ */
     text-align: center;   /* จัดข้อความตรงกลาง */
+    
 }
 
 /* คอลัมน์ Action */
@@ -215,5 +221,87 @@ nav form {
     margin: 0;  /* ยกเลิก margin ที่ทำให้ตก */
 }
 
+/* การ์ดกลางจอ */
+.auth-card {
+    max-width: 350px;
+    margin: 80px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth-card input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.auth-card button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.auth-card button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+}
+
+.auth-card .error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
 
 
+
+
+
+
+
+.flash-messages {
+    max-width: 400px;
+    margin: 10px auto;
+}
+.alert {
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+.alert-success { background-color: #ffffff; color: #000000; }
+.alert-danger { background-color: #870000; color: #ffffff; }
+.alert-info    { background-color: #ffffff; color: #000000; }
+
+/* Register/Login inputs */
+.auth-card input[type="text"],
+.auth-card input[type="password"] {
+    width: 100%;
+    height: 44px;            /* บังคับความสูงเท่ากัน */
+    padding: 10px 12px;      /* padding เท่ากัน */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 0;               /* กัน margin ต่างกัน */
+}
